@@ -1,0 +1,34 @@
+BCNF Proof Summary — Equipment Rental System
+
+1) Customer(CustomerID, Name, Email, Phone)
+   FDs: CustomerID -> Name, Email, Phone; Email -> CustomerID, Name, Phone
+   Candidate keys: {CustomerID}, {Email}
+   All determinants are keys -> BCNF.
+
+2) Equipment(EquipmentID, Name, Brand, Daily_Rate, Condition, Availability)
+   FDs: EquipmentID -> (all others)
+   Candidate key: {EquipmentID}
+   Determinant is key -> BCNF.
+
+3) Employee(EmployeeID, Name, Role, Phone, Email)
+   FDs: EmployeeID -> ... ; Email -> ...
+   Candidate keys: {EmployeeID}, {Email}
+   -> BCNF.
+
+4) Rental(RentalID, CustomerID, EquipmentID, Status, Start_Date, Return_Date, Total_Cost)
+   FDs: RentalID -> CustomerID, EquipmentID, Status, Start_Date, Return_Date, Total_Cost
+   Candidate key: {RentalID}
+   -> BCNF.
+
+5) Payment(PaymentID, RentalID, Amount, MethodUsed, PaymentDate)
+   FDs: PaymentID -> RentalID, Amount, MethodUsed, PaymentDate
+   PaymentID is PK -> BCNF.
+
+6) DamageReport(ReportID, RentalID, EquipmentID, Description, Cost, ReportDate)
+   FDs: ReportID -> ...
+   -> BCNF.
+
+7) Handles(EmployeeID, RentalID)
+   PK: (EmployeeID, RentalID) and no non-key attributes -> BCNF.
+
+Conclusion: All relations have determinants that are keys (or have been decomposed when needed) — schema is in BCNF.
