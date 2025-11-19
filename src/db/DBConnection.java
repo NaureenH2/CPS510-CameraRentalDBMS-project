@@ -10,7 +10,9 @@ public class DBConnection {
 
     private static final String URL = "jdbc:oracle:thin:@oracle.cs.torontomu.ca:1521:orcl"; // append service name
     private static final String USER = EnvLoader.get("UserID");
-    private static final String PASSWORD = EnvLoader.get("UserID");
+    private static final String PASSWORD = EnvLoader.get("Password");
+
+   
 
     private static Connection conn;
 
@@ -21,6 +23,7 @@ public class DBConnection {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            System.out.println(USER + ' '+ PASSWORD);
             System.out.println("Database connection failed. Check credentials!");
         }
         return conn;
