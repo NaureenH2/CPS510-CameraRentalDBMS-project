@@ -1,0 +1,2 @@
+Main-Class: LoginUI
+Class-Path: lib/ojdbc11.jar
