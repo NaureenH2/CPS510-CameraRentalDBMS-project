@@ -16,8 +16,10 @@ Setup:
    mkdir bin
    javac -cp "lib/ojdbc11.jar" -d bin src/env/*.java src/db/*.java src/util/*.java src/ui/*.java src/*.java
 5. Run:
-   java -cp "bin;lib/ojdbc11.jar" MainMenu   (Windows)
+   java -cp "bin;lib/ojdbc11.jar" LoginUI   (Windows)
   
+UserName: Admin
+Password: t31510
 
 Files to submit to D2L:
 - Source code (src/)
