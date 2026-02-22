@@ -41,34 +41,10 @@ Query Language: SQL
 Database Design:
 
 - Relational schema designed using ER modeling
-- Functional dependencies identified and analyzed
-- All tables normalized to Third Normal Form (3NF) and verified to satisfy Boyce–Codd Normal Form (BCNF)
-- Enforced referential integrity using primary keys, foreign keys, and constraints
+- Functional dependencies analyzed
+- All tables normalized to 3NF and verified to satisfy BCNF
+- Referential integrity enforced using primary and foreign key constraints
 
-Prereqs:
-- Java 11+ JDK installed
-- Oracle DB accessible
-- ojdbc11.jar in lib/ directory (place in project root lib/)
+Notes:
 
-Setup:
-1. Run Sql developer using OPENVPN
-2. Import DatabaseInit.sql to TMU Oracle Database 11g
-3. In the root file, do >> touch .env
-4. Add the following to the .env file (replace ___ with your username and password for TMU Oracle Database):
-   UserID = ______
-   Password = _______
-4. Compile (DIRECTLY):
-   mkdir bin
-   javac -cp "lib/ojdbc11.jar" -d bin src/env/*.java src/db/*.java src/util/*.java src/ui/*.java src/*.java
-   Run:
-   java -cp "bin;lib/ojdbc11.jar" LoginUI   (Windows)
-  
-5. Compile (For JAR file):
-   javac -cp "lib/ojdbc11.jar" -d bin src/env/*.java src/db/*.java src/util/*.java src/ui/*.java src/*.java -d out
-   jar cfm T31.jar .\Manifest.txt -C out .
-   Run:
-   java -jar .\T31.jar
-
-UserName: Admin
-Password: t31510
-
+This project was completed as a group academic project and demonstrates hands-on experience with database design, Java application development, and SQL-backed systems.
